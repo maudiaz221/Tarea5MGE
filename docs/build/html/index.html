@@ -103,11 +103,17 @@
 <section id="ejecucion-de-los-contenedores">
 <h1>Ejecución de los Contenedores<a class="headerlink" href="#ejecucion-de-los-contenedores" title="Link to this heading">¶</a></h1>
 <p>Ejemplo de ejecución del contenedor de entrenamiento:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>mi_entrenamiento:latest<span class="w"> </span>--train_data<span class="w"> </span><span class="s2">&quot;/ruta/a/train_preprocessed.csv&quot;</span><span class="w"> </span>--save_path<span class="w"> </span><span class="s2">&quot;/ruta/al/modelo&quot;</span><span class="w"> </span>--time_limit<span class="w"> </span><span class="m">60</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/data:/app/data&quot;</span><span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/models:/app/models&quot;</span><span class="w"> </span>mi_entrenamiento:latest<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--train_data<span class="w"> </span><span class="s2">&quot;/app/data/prep/train_preprocessed.csv&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--save_path<span class="w"> </span><span class="s2">&quot;/app/models&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--time_limit<span class="w"> </span><span class="m">60</span>
 </pre></div>
 </div>
 <p>Ejemplo de ejecución del contenedor de inferencia:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>mi_inferencia:latest<span class="w"> </span>--test_data<span class="w"> </span><span class="s2">&quot;/ruta/a/test_preprocessed.csv&quot;</span><span class="w"> </span>--model_path<span class="w"> </span><span class="s2">&quot;/ruta/al/modelo&quot;</span><span class="w"> </span>--output<span class="w"> </span><span class="s2">&quot;/ruta/a/predictions.csv&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/data:/app/data&quot;</span><span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/models:/app/models&quot;</span><span class="w"> </span>mi_inferencia:latest<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--test_data<span class="w"> </span><span class="s2">&quot;/app/data/inference/test_preprocessed.csv&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model_path<span class="w"> </span><span class="s2">&quot;/app/models&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--output<span class="w"> </span><span class="s2">&quot;/app/data/predictions/predictions.csv&quot;</span>
 </pre></div>
 </div>
 </section>

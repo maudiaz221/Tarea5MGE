@@ -79,10 +79,16 @@ Ejemplo de ejecución del contenedor de entrenamiento:
 
 .. code-block:: bash
 
-    docker run mi_entrenamiento:latest --train_data "/ruta/a/train_preprocessed.csv" --save_path "/ruta/al/modelo" --time_limit 60
+    docker run -v "$(pwd)/data:/app/data" -v "$(pwd)/models:/app/models" mi_entrenamiento:latest \
+        --train_data "/app/data/prep/train_preprocessed.csv" \
+        --save_path "/app/models" \
+        --time_limit 60
 
 Ejemplo de ejecución del contenedor de inferencia:
 
 .. code-block:: bash
 
-    docker run mi_inferencia:latest --test_data "/ruta/a/test_preprocessed.csv" --model_path "/ruta/al/modelo" --output "/ruta/a/predictions.csv"
+    docker run -v "$(pwd)/data:/app/data" -v "$(pwd)/models:/app/models" mi_inferencia:latest \
+        --test_data "/app/data/inference/test_preprocessed.csv" \
+        --model_path "/app/models" \
+        --output "/app/data/predictions/predictions.csv"
