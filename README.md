@@ -6,7 +6,7 @@ Este repositorio contiene scripts para preprocesar datos, entrenar un modelo de 
 Estructura del Proyecto
 -----------------------
 
-
+```
 project/
 ├── src/
 │   ├── train.py              # Script para entrenar el modelo. Acepta argumentos para rutas y parámetros.
@@ -30,7 +30,7 @@ project/
 │       ├── inference.rst     # Documentación del script de inferencia.
 │       └── docker_usage.rst  # Instrucciones de uso de Docker.
 
-
+```
 
 Requisitos
 ----------
