@@ -122,18 +122,8 @@ La documentación del proyecto se encuentra en el directorio "docs/source". Para
 La documentación incluye detalles sobre:
 - train.py: Script de entrenamiento.
 - inference.py: Script de inferencia.
-- docker_usage.rst: Instrucciones y ejemplos de uso de Docker.
+- index.rst: Instrucciones y ejemplos de uso de Docker.
 
-Screenshots de Entradas y Salidas
----------------------------------
-
-En la entrega vía CANVAS se debe incluir un HTML con:
-- El contenido del Dockerfile y los comandos utilizados.
-- Screenshots (capturas de pantalla) que muestren:
-  - La terminal con la ejecución de los comandos de Docker (las entradas).
-  - Los mensajes de salida, como confirmación de que el modelo se ha guardado o las predicciones han sido generadas (las salidas).
-
-Estas capturas sirven para evidenciar el correcto funcionamiento de los contenedores y la generación de archivos (modelo, predicciones, etc.).
 
 Contribuciones
 --------------
