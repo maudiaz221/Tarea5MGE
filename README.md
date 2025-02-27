@@ -6,14 +6,15 @@ Este repositorio contiene scripts para preprocesar datos, entrenar un modelo de 
 Estructura del Proyecto
 -----------------------
 
+
 project/
 ├── src/
 │   ├── train.py              # Script para entrenar el modelo. Acepta argumentos para rutas y parámetros.
 │   ├── inference.py          # Script para ejecutar inferencia con el modelo entrenado.
 │   └── prep.py               # Script para preprocesar los datos.
-│   ├── requirements.txt          # Lista de dependencias (autogluon, pandas, etc.)
-│   ├── Dockerfile.train          # Dockerfile para el contenedor de entrenamiento.
-│   └── Dockerfile.inference      # Dockerfile para el contenedor de inferencia.
+├── requirements.txt          # Lista de dependencias (autogluon, pandas, etc.)
+├── Dockerfile.train          # Dockerfile para el contenedor de entrenamiento.
+└── Dockerfile.inference      # Dockerfile para el contenedor de inferencia.
 
 ├── data/
 │   ├── raw/                  # Archivos CSV originales (e.g., train.csv, test.csv, sample_submission.csv)
